@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="../static/learning.png">
+<!-- Add icon library -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<title>Bitlocate</title>
+
+<style>
+body {font-family: Arial, Helvetica, sans-serif;
+background-color: #212f3c ;overflow-x: hidden;}
+* {box-sizing: border-box;}
+
+.input-container {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.icon {
+  padding: 10px;
+  background: dodgerblue;
+  color: white;
+  min-width: 50px;
+  text-align: center;
+}
+
+.input-field {
+  width: 80%;
+  padding: 10px;
+  outline: none;
+}
+
+.input-field:focus {
+  border: 2px solid dodgerblue;
+}
+
+/* Set a style for the submit button */
+.btn {
+  background-color: dodgerblue;
+  color: white;
+  padding: 15px 10px;
+  border: none;
+  cursor: pointer;
+  width: 20%;
+  opacity: 0.9;
+}
+.btn1 {
+  background-color: #ff5733;
+  color: white;
+  padding: 15px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+
+.btn:hover {
+  opacity: 1;
+}
+</style>
+</head>
+<!--<div class="container">
+{% if un %}
+	<div class="alert alert-danger">
+		<h4>{{un}}</h4>
+	</div>
+{% endif %}
+</div> -->
+
+<body>
+<form action="/search" method="POST"style="max-width:500px;margin:auto">
+  
+<div class="container">
+
+    <div class="row">
+<h1 style="color:white">Welcome To Bitlocate!</h1><br>
+        <div class="form-group name1 col-md-2">
+            <label for="exampleInputEmail1" class="formText" style="color:white">LATITUTE*</label>
+            <input type="number" step="0.0000001"class="form-control" placeholder="23.259933" id="latitute" aria-describedby="emailHelp" name="latitute"></input>
+        </div>
+
+        <div class="form-group name2 col-md-2">
+            <label for="exampleInputEmail1## Heading ##" class="formText"  style="color:white">LONGITUTE*</label>
+            <input type="number" step="0.0000001" placeholder="77.412613"class="form-control" id="longitute" aria-describedby="emailHelp" name="longitute"></input>
+        </div>
+  </div>
+<input type="submit" name="submit" value="Get-Details" class="btn"></input>
+</div>		
+</form>
+</body>
+<br>
+<div class="container">
+{% if y %}
+	<div class="alert alert-success">
+	{% for test in y %}
+<table>
+    <tr>
+        <td><pre>{{ test|tojson|safe }}</pre></td>
+
+		<td><pre>{{ y[test]}}</pre></td>
+    
+{% endfor %}
+</tr>
+	</table></div>
+{% endif %}
+</div>
+</html>
